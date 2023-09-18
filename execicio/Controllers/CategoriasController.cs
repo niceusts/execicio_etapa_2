@@ -22,19 +22,19 @@ namespace execicio.Controllers
         // GET: Categorias
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Categoria.ToListAsync());
+              return View(await _context.categoria.ToListAsync());
         }
 
-        // GET: Categorias/Details/5
+        // GET: categoria/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Categoria == null)
+            if (id == null || _context.categoria == null)
             {
                 return NotFound();
             }
 
-            var categoria = await _context.Categoria
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var categoria = await _context.categoria
+                .FirstOrDefaultAsync(m => m.id == id);
             if (categoria == null)
             {
                 return NotFound();
@@ -43,18 +43,18 @@ namespace execicio.Controllers
             return View(categoria);
         }
 
-        // GET: Categorias/Create
+        // GET: categoria/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Categorias/Create
+        // POST: categoria/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // For more details, see http://go.microsoft.com/fwlink/?Linkid=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao")] Categoria categoria)
+        public async Task<IActionResult> Create([Bind("id,nome,descricao")] Categoria categoria)
         {
             if (ModelState.IsValid)
             {
@@ -65,15 +65,15 @@ namespace execicio.Controllers
             return View(categoria);
         }
 
-        // GET: Categorias/Edit/5
+        // GET: categoria/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Categoria == null)
+            if (id == null || _context.categoria == null)
             {
                 return NotFound();
             }
 
-            var categoria = await _context.Categoria.FindAsync(id);
+            var categoria = await _context.categoria.FindAsync(id);
             if (categoria == null)
             {
                 return NotFound();
@@ -81,14 +81,14 @@ namespace execicio.Controllers
             return View(categoria);
         }
 
-        // POST: Categorias/Edit/5
+        // POST: categoria/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // For more details, see http://go.microsoft.com/fwlink/?Linkid=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Descricao")] Categoria categoria)
+        public async Task<IActionResult> Edit(int id, [Bind("id,nome,descricao")] Categoria categoria)
         {
-            if (id != categoria.Id)
+            if (id != categoria.id)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace execicio.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CategoriaExists(categoria.Id))
+                    if (!CategoriaExists(categoria.id))
                     {
                         return NotFound();
                     }
@@ -116,16 +116,16 @@ namespace execicio.Controllers
             return View(categoria);
         }
 
-        // GET: Categorias/Delete/5
+        // GET: categoria/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Categoria == null)
+            if (id == null || _context.categoria == null)
             {
                 return NotFound();
             }
 
-            var categoria = await _context.Categoria
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var categoria = await _context.categoria
+                .FirstOrDefaultAsync(m => m.id == id);
             if (categoria == null)
             {
                 return NotFound();
@@ -134,19 +134,19 @@ namespace execicio.Controllers
             return View(categoria);
         }
 
-        // POST: Categorias/Delete/5
+        // POST: categoria/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Categoria == null)
+            if (_context.categoria == null)
             {
                 return Problem("Entity set 'execicioContext.Categoria'  is null.");
             }
-            var categoria = await _context.Categoria.FindAsync(id);
+            var categoria = await _context.categoria.FindAsync(id);
             if (categoria != null)
             {
-                _context.Categoria.Remove(categoria);
+                _context.categoria.Remove(categoria);
             }
             
             await _context.SaveChangesAsync();
@@ -155,7 +155,7 @@ namespace execicio.Controllers
 
         private bool CategoriaExists(int id)
         {
-          return _context.Categoria.Any(e => e.Id == id);
+          return _context.categoria.Any(e => e.id == id);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace execicio.Data
         {
         }
 
-        public DbSet<execicio.Models.Categoria> Categoria { get; set; } = default!;
+        public DbSet<Categoria> categoria { get; set; }
+
     }
 }
