@@ -12,9 +12,9 @@ namespace execicio.Controllers
 {
     public class CategoriasController : Controller
     {
-        private readonly execicioContext _context;
+        private readonly ExecicioContext _context;
 
-        public CategoriasController(execicioContext context)
+        public CategoriasController(ExecicioContext context)
         {
             _context = context;
         }

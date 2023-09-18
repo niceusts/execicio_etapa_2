@@ -7,9 +7,9 @@ using execicio.Models;
 
 namespace execicio.Data
 {
-    public class execicioContext : DbContext
+    public class ExecicioContext : DbContext
     {
-        public execicioContext (DbContextOptions<execicioContext> options)
+        public ExecicioContext (DbContextOptions<ExecicioContext> options)
             : base(options)
         {
         }

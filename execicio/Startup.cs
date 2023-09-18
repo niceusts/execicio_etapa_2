@@ -27,8 +27,8 @@ namespace execicio
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<execicioContext>(options =>
-                    options.UseNpgsql(Configuration.GetConnectionString("execicioContext")));
+            services.AddDbContext<ExecicioContext>(options =>
+                    options.UseNpgsql(Configuration.GetConnectionString("ExecicioContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
