@@ -14,9 +14,6 @@ namespace execicio.Models
         [Required]
         [MaxLength(100)]
         public string nome { get; set; }
-
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = false)]
         public DateTime? data_nascimemento { get; set; }
 
         [MaxLength(50)]
