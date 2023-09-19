@@ -12,6 +12,7 @@ namespace execicio.Data
         public ExecicioContext (DbContextOptions<ExecicioContext> options)
             : base(options)
         {
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
 
         public DbSet<Categoria> categoria { get; set; }
