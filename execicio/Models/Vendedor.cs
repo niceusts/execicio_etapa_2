@@ -9,9 +9,6 @@ namespace execicio.Models
         [Key]
         [StringLength(12)]
         public string matricula_aluno { get; set; }
-
-        [Display(Name = "Habilitade desde:")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime? habilitado_desde { get; set; }
 
         public int leiloes_criados { get; set; }

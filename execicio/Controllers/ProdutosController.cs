@@ -58,6 +58,7 @@ namespace execicio.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,nome,descricao,id_categoria,foto,matricula_vendedor,data_cadastro")] Produto produto)
         {
+
             if (ModelState.IsValid)
             {
                 _context.Add(produto);
