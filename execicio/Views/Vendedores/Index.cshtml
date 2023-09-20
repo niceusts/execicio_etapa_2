@@ -14,7 +14,7 @@
     <thead>
         <tr>
             <th>
-                Nome
+                @Html.DisplayNameFor(model => model.aluno.nome)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.matricula_aluno)
@@ -35,14 +35,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                    @if (item.aluno != null)
-                    {
-                        @item.aluno.nome
-                    }
-                    else
-                    {
-                        <a>Nome do Aluno não disponível</a>
-                    }
+                @Html.DisplayFor(modelItem => item.aluno.nome)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.matricula_aluno)

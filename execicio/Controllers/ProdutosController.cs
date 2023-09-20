@@ -22,7 +22,9 @@ namespace execicio.Controllers
         // GET: Produtos
         public async Task<IActionResult> Index()
         {
-              return View(await _context.produto.ToListAsync());
+            var produtoComCategoria = await _context.produto
+                .Include(v => v.categoria).ToListAsync();
+            return View(produtoComCategoria);
         }
 
         // GET: Produtos/Details/5

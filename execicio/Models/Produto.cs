@@ -27,7 +27,7 @@ namespace execicio.Models
 
         [Required]
         [StringLength(12)]
-        [ForeignKey("matricula_vendedor")]
+        [ForeignKey("vendedor")]
         public string matricula_vendedor { get; set; }
 
         [Required]
