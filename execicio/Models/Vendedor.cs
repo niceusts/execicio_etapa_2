@@ -18,7 +18,6 @@ namespace execicio.Models
 
         public bool impedido { get; set; }
 
-        [Display(Name = "Nome:")]
         [ForeignKey("matricula_aluno")]
         public virtual Aluno aluno { get; set; }
     }

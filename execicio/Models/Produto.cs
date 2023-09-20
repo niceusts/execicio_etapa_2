@@ -18,7 +18,7 @@ namespace execicio.Models
         public string descricao { get; set; }
 
         [Required]
-        [ForeignKey("Categoria")]
+        [ForeignKey("categoria")]
         public int id_categoria { get; set; }
 
         [Required]
@@ -27,7 +27,7 @@ namespace execicio.Models
 
         [Required]
         [StringLength(12)]
-        [ForeignKey("Vendedor")]
+        [ForeignKey("matricula_vendedor")]
         public string matricula_vendedor { get; set; }
 
         [Required]
