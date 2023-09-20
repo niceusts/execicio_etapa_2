@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.matricula)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.nome)
             </th>
             <th>
@@ -54,6 +57,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.matricula)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.nome)
             </td>

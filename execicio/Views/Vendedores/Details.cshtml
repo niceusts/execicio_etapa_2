@@ -1,0 +1,36 @@
+﻿@model execicio.Models.Vendedor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Vendedor</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.habilitado_desde)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.habilitado_desde)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.leiloes_criados)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.leiloes_criados)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.impedido)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.impedido)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.matricula_aluno">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

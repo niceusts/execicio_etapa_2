@@ -14,6 +14,7 @@ namespace execicio.Data
 
         public DbSet<Categoria> categoria { get; set; }
         public DbSet<Aluno> aluno { get; set; }
+        public DbSet<Vendedor> vendedor { get; set; }
 
     }
 }

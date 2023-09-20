@@ -1,0 +1,67 @@
+﻿@model IEnumerable<execicio.Models.Vendedor>
+@using execicio.Models
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.matricula_aluno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.habilitado_desde)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.leiloes_criados)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.impedido)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @if (item.aluno != null)
+                    {
+                        @item.aluno.nome
+                    }
+                    else
+                    {
+                        <a>Nome do Aluno não disponível</a>
+                    }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.matricula_aluno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.habilitado_desde)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.leiloes_criados)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.impedido)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.matricula_aluno">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.matricula_aluno">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.matricula_aluno">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
