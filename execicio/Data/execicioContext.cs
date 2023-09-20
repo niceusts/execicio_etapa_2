@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using execicio.Models;
 using Microsoft.EntityFrameworkCore;
-using execicio.Models;
+using System;
 
 namespace execicio.Data
 {
     public class ExecicioContext : DbContext
     {
-        public ExecicioContext (DbContextOptions<ExecicioContext> options)
+        public ExecicioContext(DbContextOptions<ExecicioContext> options)
             : base(options)
         {
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);

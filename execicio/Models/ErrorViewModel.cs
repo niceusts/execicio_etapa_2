@@ -1,5 +1,3 @@
-using System;
-
 namespace execicio.Models
 {
     public class ErrorViewModel

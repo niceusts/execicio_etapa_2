@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace execicio.Models
+﻿namespace execicio.Models
 {
     public class Categoria
     {

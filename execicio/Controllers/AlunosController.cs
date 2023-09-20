@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using execicio.Data;
+using execicio.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using execicio.Data;
-using execicio.Models;
 
 namespace execicio.Controllers
 {
@@ -22,7 +19,7 @@ namespace execicio.Controllers
         // GET: Alunos
         public async Task<IActionResult> Index()
         {
-              return View(await _context.aluno.ToListAsync());
+            return View(await _context.aluno.ToListAsync());
         }
 
         // GET: Alunos/Details/5
@@ -149,14 +146,14 @@ namespace execicio.Controllers
             {
                 _context.aluno.Remove(aluno);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool AlunoExists(string id)
         {
-          return _context.aluno.Any(e => e.matricula == id);
+            return _context.aluno.Any(e => e.matricula == id);
         }
     }
 }
