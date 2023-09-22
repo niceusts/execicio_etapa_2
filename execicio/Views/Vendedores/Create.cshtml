@@ -14,7 +14,13 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="matricula_aluno" class="control-label"></label>
-                <input asp-for="matricula_aluno" class="form-control" />
+                <select asp-for="matricula_aluno" class="form-control">
+                    <option value="">Selecione uma matrícula</option>
+                    @foreach (var vendedor in ViewBag.ListaDeMatriculas)
+                    {
+                        <option value="@vendedor.Value">@vendedor.Text</option>
+                    }
+                </select>
                 <span asp-validation-for="matricula_aluno" class="text-danger"></span>
             </div>
             <div class="form-group">

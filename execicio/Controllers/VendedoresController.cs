@@ -42,12 +42,22 @@ namespace execicio.Controllers
                 return NotFound();
             }
 
+          
+
             return View(vendedor);
         }
 
         // GET: Vendedores/Create
         public IActionResult Create()
         {
+            var listaDeMatriculas = _context.vendedor.Select(v => new SelectListItem
+            {
+                Value = v.matricula_aluno,
+                Text = v.matricula_aluno
+            }).ToList();
+
+            ViewBag.ListaDeMatriculas = listaDeMatriculas;
+
             return View();
         }
 
@@ -64,6 +74,15 @@ namespace execicio.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
+            var listaDeMatriculas = _context.vendedor.Select(v => new SelectListItem
+            {
+                Value = v.matricula_aluno,
+                Text = v.matricula_aluno
+            }).ToList();
+
+            ViewBag.ListaDeMatriculas = listaDeMatriculas;
+
             return View(vendedor);
         }
 

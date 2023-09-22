@@ -48,6 +48,25 @@ namespace execicio.Controllers
         // GET: Produtos/Create
         public IActionResult Create()
         {
+            // Obtenha a lista de matrículas de vendedores disponíveis no banco de dados
+            var listaDeMatriculas = _context.vendedor.Select(v => new SelectListItem
+            {
+                Value = v.matricula_aluno,
+                Text = v.matricula_aluno
+            }).ToList();// Obtenha a lista de matrículas de vendedores disponíveis no banco de dados
+
+            // Adicione a lista de matrículas à ViewBag
+            ViewBag.ListaDeMatriculas = listaDeMatriculas;
+
+            var ListaDeCategorias = _context.categoria.Select(v => new SelectListItem
+            {
+                Value = v.id.ToString(),
+                Text = v.nome
+            }).ToList();
+
+            // Adicione a lista de matrículas à ViewBag
+            ViewBag.ListaDeCategorias = ListaDeCategorias;
+
             return View();
         }
 
@@ -65,6 +84,24 @@ namespace execicio.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
+            var ListaDeCategorias = _context.categoria.Select(v => new SelectListItem
+            {
+                Value = v.id.ToString(),
+                Text = v.nome
+            }).ToList();
+
+            ViewBag.listaCategorias = ListaDeCategorias;   
+            // Se o modelo não for válido, recupere a lista de matrículas novamente
+            var listaDeMatriculas = _context.vendedor.Select(v => new SelectListItem
+            {
+                Value = v.matricula_aluno,
+                Text = v.matricula_aluno
+            }).ToList();
+
+            // Adicione a lista de matrículas à ViewBag para reexibir no formulário
+            ViewBag.ListaDeMatriculas = listaDeMatriculas;
+
             return View(produto);
         }
 
