@@ -50,10 +50,10 @@ namespace execicio.Controllers
         // GET: Vendedores/Create
         public IActionResult Create()
         {
-            var listaDeMatriculas = _context.vendedor.Select(v => new SelectListItem
+            var listaDeMatriculas = _context.aluno.Select(v => new SelectListItem
             {
-                Value = v.matricula_aluno,
-                Text = v.matricula_aluno
+                Value = v.matricula,
+                Text = v.matricula
             }).ToList();
 
             ViewBag.ListaDeMatriculas = listaDeMatriculas;
